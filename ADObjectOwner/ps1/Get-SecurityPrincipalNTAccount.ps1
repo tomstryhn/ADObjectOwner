@@ -1,3 +1,5 @@
+#Requires -Modules ActiveDirectory
+
 function Get-SecurityPrincipalNTAccount {
 
     <#
