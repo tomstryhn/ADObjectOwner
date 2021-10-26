@@ -1,6 +1,6 @@
 # ADObjectOwner
 
-Small PowerShell Module, for making the process of changing the Owner of ADObjects.
+PowerShell Module, for making the process of changing the Owner of ADObjects that much easier and quick.
 
 ## Usescenarios
 
