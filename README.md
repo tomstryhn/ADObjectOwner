@@ -106,8 +106,8 @@ If you pipe more than one ADObject into the Set-ADObjectOwner, you will save a l
 
 ## Functions
 
-### Get-ADObjectOwner
+#### Get-ADObjectOwner
 
-### Get-SecurityPrincipalNTAccount
+#### Get-SecurityPrincipalNTAccount
 
-### Set-ADObjectOwner
+#### Set-ADObjectOwner
