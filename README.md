@@ -1,2 +1,3 @@
 # ADObjectOwner
-A small Module to help manage ADObject ownership in AD
+
+Small PowerShell Module for making the process of changing the Owner defined in the ACL on ADObjects.
