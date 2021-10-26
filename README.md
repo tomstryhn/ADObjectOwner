@@ -48,6 +48,8 @@ PS C:\GitHub\ADObjectOwner>
 
 Alternatively, if you dont have the option to clone the Repo and importing the module, you can do it the "Ninja Way" and load the functions directly into memory of your PowerShell session. Be aware depending on the security in your enviroment, you could trigger one or more alarms, since this method leverages the same workaround as hackers use, when trying to load scripts, without saving them on disk.
 
+Let's start by checking if we have the functions loaded:
+
 ```PowerShell
 # Testing for Functions - No Output
 PS C:\> Get-Command *ADObjectOwner*
@@ -66,6 +68,8 @@ foreach($file in $files){
     Invoke-Expression -Command $rCode
 }
 ```
+
+Now check for the Commands again:
 
 ```PowerShell
 # Testing for Functions - Now the functions are in memory
