@@ -20,7 +20,7 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 ## Background
 
 Every ADObject has an owner, the Owner is by default the Identity creating it. Normally if a member of the 'Domain Admins' or 'Enterprise Admins' creates an Object, the owner of the Object would be set as the 'Domain Admins' or 'Enterprise Admins'.
-Also per default in ADDS, an User can domain-join up to 10 computers, by doing so, if the User is not member of any Privliged Group, the owner of the Computer being domain-joined will be the User joining it to the domain.
+Also per default in ADDS, a user can domain-join up to 10 computers, by doing so, if the user is not member of any Privliged Group, the owner of the Computer being domain-joined will be the user joining it to the domain.
 
 #### Risk(s)
 
