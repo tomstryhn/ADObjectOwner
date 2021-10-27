@@ -28,7 +28,7 @@ There are several risks by this 'feature', one being if a hacker get hold of the
 
 #### Mitigation
 
-The easy way to mitigate this problem, is obviously to make sure that no unprivliged users, have ownership of any of the Objects in your Active Directory. The ADObjectOwner Module, makes this task rather simple. Since the `Get-ADObjectOwner` takes pipeline-input, you are able to pipe several ADObject into the function, and get an output with the DistinguishedName and the Owner. Now it's pretty straight forward to sort in the Objects based on the Owner. With the combination of `Get-ADObjectOwner`, `Get-SecurityPrincipalNTAccount` and `Set-ADObjectOwner`, it's possible to handle this risk, without going through all the Objects manually.
+The easy way to mitigate this problem, is obviously to make sure that no unprivliged users, have ownership of any of the Objects in your Active Directory. The ADObjectOwner Module, makes this task rather simple. Since the `Get-ADObjectOwner` takes pipeline-input, you are able to pipe several ADObject into the function, and get an output with the DistinguishedName and the Owner. Now it's pretty straight forward to sort in the Objects based on the Owner. With the combination of `Get-ADObjectOwner`, `Get-SecurityPrincipalNTAccount` and `Set-ADObjectOwner`, it's possible to handle this risk, without going through all the Objects manually. See [Examples](#examples) for more on this.
 
 ## Importing the Module
 
