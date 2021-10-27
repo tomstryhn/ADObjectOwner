@@ -79,10 +79,10 @@ PS C:\> $newOwner = Get-SecurityPrincipalNTAccount -SAMAccountName 'Domain Admin
 
 PS C:\> Get-ADObject -SearchBase "OU=TestOU,DC=YourDomain,DC=local" -Filter * | Get-ADObjectOwner | Where-Object { $_.Owner -ne $newOwner } | Set-ADObjectOwner -Owner $newOwner
 
-DistinguishedName                                      Owner
------------------                                      -----
-CN=JohnSmith,OU=DomainComputers,DC=YourDomain,DC=local YourDomain\Domain Admins
-CN=WS001,OU=DomainComputers,DC=YourDomain,DC=local     YourDomain\Domain Admins
+DistinguishedName                             Owner
+-----------------                             -----
+CN=JohnSmith,OU=TestOU,DC=YourDomain,DC=local YourDomain\Domain Admins
+CN=WS001,OU=TestOU,DC=YourDomain,DC=local     YourDomain\Domain Admins
 
 PS C:\> _
 
