@@ -39,6 +39,7 @@ function Set-ADObjectOwner {
     .LINK
         Get-ADObjectOwner
         Get-SecurityPrincipalNTAccount
+        
     #>
 
     [CmdletBinding()]
