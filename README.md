@@ -7,6 +7,7 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 [Background](#background)
 - [Risk(s)](#risks)
 - [Mitigation](#mitigation)
+
 [Importing-the-Module](#importing-the-module)
 
 [Examples](#examples)
