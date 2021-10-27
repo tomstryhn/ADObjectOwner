@@ -12,7 +12,7 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 
 [Examples](#examples)
 
-[Funtions](#functions)
+[Functions](#functions)
 - [Get-ADObjectOwner](#get-adobjectowner)
 - [Get-SecurityPrincipalNTAccount](#get-securityprincipalntaccount)
 - [Set-ADObjectOwner](#set-adobjectowner)
