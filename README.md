@@ -18,7 +18,7 @@ PowerShell Module, for making the process of changing the Owner of ADObjects tha
 
 ---
 
-### Background
+## Background
 
 Every ADObject has an owner, the Owner is by default the Identity creating it. Normally if a member of the 'Domain Admins' or 'Enterprise Admins' creates an Object, the owner of the Object would be set as the 'Domain Admins' or 'Enterprise Admins'.
 Also per default in ADDS, an User can domain-join up to 10 computers, by doing so, if the User is not member of any Privliged Group, the owner of the Computer being domain-joined will be the User joining it to the domain.
@@ -33,7 +33,7 @@ The easy way to mitigate this problem, is obviously to make sure that no unprivl
 
 ---
 
-### Importing the Module
+## Importing the Module
 
 1. Either you can download the ZIP using the green "Code" button top right, or clone this repository
 2. Go to your repositiry, or unzipped folder in your PowerShell
@@ -69,7 +69,7 @@ PS C:\GitHub\ADObjectOwner>
 
 ---
 
-### Examples
+## Examples
 
 When using the Set-ADObjectOwner, use it with the Get-SecurityPrincipalNTAccount set as a variable like shown below:
 
@@ -92,7 +92,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
 
 ---
 
-### Functions
+## Functions
 
 #### Get-ADObjectOwner
 
