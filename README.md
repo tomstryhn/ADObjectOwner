@@ -17,15 +17,13 @@ The easy way to mitigate this problem, is obviously to make sure that no unprivl
 
 ### Importing the Module
 
-#### The correct way
-
-1. Start by Cloning the Repo
-2. Go to your Repo folder in your PowerShell
+1. Either you can download the ZIP using the green "Code" button top right, or clone this repository
+2. Go to your repositiry, or unzipped folder in your PowerShell
 4. See below
 
 ```PowerShell
 
-PS C:\GitHub\ADObjectOwner> ls
+PS C:\GitHub\ADObjectOwner> gci
 
 
     Directory: C:\GitHub\ADObjectOwner
@@ -51,47 +49,7 @@ PS C:\GitHub\ADObjectOwner>
 
 ```
 
-#### The Ninja Way
-
-Alternatively, if you dont have the option to clone the Repo and importing the module, you can do it the "Ninja Way" and load the functions directly into memory of your PowerShell session. Be aware depending on the security in your enviroment, you could trigger one or more alarms, since this method leverages the same workaround as hackers use, when trying to load scripts, without saving them on disk.
-
-Let's start by checking if we have the functions loaded:
-
-```PowerShell
-# Testing for Functions - No Output
-PS C:\> Get-Command *ADObjectOwner*
-PS C:\> _
-```
-
-Now run the following:
-
-```PowerShell
-$files = 'Get-ADObjectOwner.ps1','Get-SecurityPrincipalNTAccount.ps1','Set-ADObjectOwner.ps1'
-$rGit = 'https://raw.githubusercontent.com/tomstryhn/ADObjectOwner/main/ADObjectOwner/ps1/'
-
-foreach($file in $files){
-    $rURL = "$rGit$file"
-    $rCode = (Invoke-WebRequest -Uri $rURL).Content
-    Invoke-Expression -Command $rCode
-}
-```
-
-Now check for the Commands again:
-
-```PowerShell
-# Testing for Functions - Now the functions are in memory
-PS C:\> Get-Command *ADObjectOwner*
-
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Function        Get-ADObjectOwner
-Function        Set-ADObjectOwner
-
-
-PS C:\> _
-```
-
-## Examples
+### Examples
 
 When using the Set-ADObjectOwner, use it with the Get-SecurityPrincipalNTAccount set as a variable like shown below:
 
