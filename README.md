@@ -16,8 +16,6 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 - [Get-SecurityPrincipalNTAccount](#get-securityprincipalntaccount)
 - [Set-ADObjectOwner](#set-adobjectowner)
 
----
-
 ## Background
 
 Every ADObject has an owner, the Owner is by default the Identity creating it. Normally if a member of the 'Domain Admins' or 'Enterprise Admins' creates an Object, the owner of the Object would be set as the 'Domain Admins' or 'Enterprise Admins'.
@@ -30,8 +28,6 @@ There are several risks by this 'feature', one being if a hacker get hold of the
 #### Mitigation
 
 The easy way to mitigate this problem, is obviously to make sure that no unprivliged users, have ownership of any of the Objects in your Active Directory. The ADObjectOwner Module, makes this task rahter simple. Since the Get-ADObjectOwner takes pipeline-input, you are able to pipe several ADObject into the function, and get an output with the DistinguishedName and the Owner. Now it's pretty straight forward to sort in the Objects based on the Owner. With the combination of Get-ADObjectOwner, Get-SecurityPrincipalNTAccount, Set-ADObjectOwner, it's possible to handle this risk, without going through all the Objects manually.
-
----
 
 ## Importing the Module
 
@@ -67,8 +63,6 @@ PS C:\GitHub\ADObjectOwner>
 
 ```
 
----
-
 ## Examples
 
 When using the Set-ADObjectOwner, use it with the Get-SecurityPrincipalNTAccount set as a variable like shown below:
@@ -89,8 +83,6 @@ PS C:\> _
 ```
 
 By setting the Owner in an variable you will obtain a far better performance, since the UserPrincipal will not have to be generated on each Set-ADObjectOwner.
-
----
 
 ## Functions
 
