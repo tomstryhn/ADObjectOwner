@@ -28,13 +28,13 @@ There are several risks by this 'feature', one being if a hacker get hold of the
 
 #### Mitigation
 
-The easy way to mitigate this problem, is obviously to make sure that no unprivliged users, have ownership of any of the Objects in your Active Directory. The ADObjectOwner Module, makes this task rahter simple. Since the Get-ADObjectOwner takes pipeline-input, you are able to pipe several ADObject into the function, and get an output with the DistinguishedName and the Owner. Now it's pretty straight forward to sort in the Objects based on the Owner. With the combination of Get-ADObjectOwner, Get-SecurityPrincipalNTAccount, Set-ADObjectOwner, it's possible to handle this risk, without going through all the Objects manually.
+The easy way to mitigate this problem, is obviously to make sure that no unprivliged users, have ownership of any of the Objects in your Active Directory. The ADObjectOwner Module, makes this task rather simple. Since the `Get-ADObjectOwner` takes pipeline-input, you are able to pipe several ADObject into the function, and get an output with the DistinguishedName and the Owner. Now it's pretty straight forward to sort in the Objects based on the Owner. With the combination of `Get-ADObjectOwner`, `Get-SecurityPrincipalNTAccount` and `Set-ADObjectOwner`, it's possible to handle this risk, without going through all the Objects manually.
 
 ## Importing the Module
 
 1. Either you can download the ZIP using the green "Code" button top right, or clone this repository
 2. Go to your repositiry, or unzipped folder in your PowerShell
-4. See below
+3. See below
 
 ```PowerShell
 
@@ -66,7 +66,7 @@ PS C:\GitHub\ADObjectOwner>
 
 ## Examples
 
-When using the Set-ADObjectOwner, use it with the Get-SecurityPrincipalNTAccount set as a variable like shown below:
+When using the `Set-ADObjectOwner`, use it with the `Get-SecurityPrincipalNTAccount` output in a variable like shown below:
 
 ```PowerShell
 
@@ -83,7 +83,7 @@ PS C:\> _
 
 ```
 
-By setting the Owner in an variable you will obtain a far better performance, since the UserPrincipal will not have to be generated on each Set-ADObjectOwner.
+By setting the Owner in an variable you will obtain a far better performance, since the UserPrincipal will not have to be generated for each `Set-ADObjectOwner` action.
 
 ## Functions
 
