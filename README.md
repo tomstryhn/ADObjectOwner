@@ -2,31 +2,38 @@
 
 PowerShell Module, for making the process of changing the Owner of bulk ADObjects so much more simple.
 
-## Content
+## Table of Content
 
-[Background](#background)
-- [Risk(s)](#risks)
-- [Mitigation](#mitigation)
+  - [Version Changes](#version-changes)
+  - [Background](#background)
+      - [Risk(s)](#risks)
+      - [Mitigation](#mitigation)
+  - [Importing the Module](#importing-the-module)
+  - [Examples](#examples)
+  - [Functions](#functions)
+      - [Get-ADObjectOwner](#get-adobjectowner)
+      - [Get-SecurityPrincipalNTAccount](#get-securityprincipalntaccount)
+      - [Set-ADObjectOwner](#set-adobjectowner)
 
-[Importing-the-Module](#importing-the-module)
+## Version Changes
 
-[Examples](#examples)
-
-[Functions](#functions)
-- [Get-ADObjectOwner](#get-adobjectowner)
-- [Get-SecurityPrincipalNTAccount](#get-securityprincipalntaccount)
-- [Set-ADObjectOwner](#set-adobjectowner)
+>1.0.1.0
+- Minor changes to the filestructure of the Module
+- ScriptFileInfo added on the scriptfiles in the Module
+- MIT License added - Yes, it's free to use
+>1.0.0.20211026
+- First version published on GitHub
 
 ## Background
 
 Every ADObject has an owner, the Owner is by default the Identity creating it. Normally if a member of the 'Domain Admins' or 'Enterprise Admins' creates an Object, the owner of the Object would be set as the 'Domain Admins' or 'Enterprise Admins'.
 Also per default in ADDS, a user can domain-join up to 10 computers, by doing so, if the user is not member of any Privliged Group, the owner of the Computer being domain-joined will be the user joining it to the domain.
 
-#### Risk(s)
+### Risk(s)
 
 There are several risks by this 'feature', one being if a hacker get hold of the credentials for the User, they have indirectly Full Control over the Object, being an Owner on its own don't grant Full Control, but by being the Owner they have permission to alter the Permissions on the Object, which gives the hacker the option to take Full Control over the Object.
 
-#### Mitigation
+### Mitigation
 
 The easy way to mitigate this problem, is obviously to make sure that no unprivliged users, have ownership of any of the Objects in your Active Directory. The ADObjectOwner Module, makes this task rather simple. Since the `Get-ADObjectOwner` takes pipeline-input, you are able to pipe several ADObject into the function, and get an output with the DistinguishedName and the Owner. Now it's pretty straight forward to sort in the Objects based on the Owner. With the combination of `Get-ADObjectOwner`, `Get-SecurityPrincipalNTAccount` and `Set-ADObjectOwner`, it's possible to handle this risk, without going through all the Objects manually. See [Examples](#examples) for more on this.
 
@@ -55,9 +62,9 @@ PS C:\GitHub\ADObjectOwner> Get-Command -Module ADObjectOwner
 
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-Function        Get-ADObjectOwner                                  1.0.0.2... ADObjectOwner
-Function        Get-SecurityPrincipalNTAccount                     1.0.0.2... ADObjectOwner
-Function        Set-ADObjectOwner                                  1.0.0.2... ADObjectOwner
+Function        Get-ADObjectOwner                                  1.0.1.0    ADObjectOwner
+Function        Get-SecurityPrincipalNTAccount                     1.0.1.0    ADObjectOwner
+Function        Set-ADObjectOwner                                  1.0.1.0    ADObjectOwner
 
 
 PS C:\GitHub\ADObjectOwner>
@@ -87,7 +94,9 @@ By setting the Owner in an variable you will obtain a far better performance, si
 
 ## Functions
 
-#### Get-ADObjectOwner
+The list of the functions contained in this module.
+
+### Get-ADObjectOwner
 
 ```PowerShell
 <#
@@ -95,7 +104,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
     Gets Object Owner, from the Access Control List on an ADObject.
 
 .DESCRIPTION
-    Gets the ACL of an ADObject, and returns the Object Owner.
+    Gets the ACL of an ADObject, and returns the Object Owner
 
 .PARAMETER DistinguishedName
     The DistinguishedName of the Object you want to get the Owner of.
@@ -110,6 +119,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
 .NOTES
     FUNCTION: Set-ADObjectOwner
     AUTHOR:   Tom Stryhn
+    GITHUB:   https://github.com/tomstryhn/
 
 .INPUTS
     [string]
@@ -123,7 +133,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
 #>
 ```
 
-#### Get-SecurityPrincipalNTAccount
+### Get-SecurityPrincipalNTAccount
 
 ```PowerShell
 <#
@@ -151,6 +161,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
 .NOTES
     FUNCTION: Get-SecurityPrincipalNTAccount
     AUTHOR:   Tom Stryhn
+    GITHUB:   https://github.com/tomstryhn/
 
 .INPUTS
     [string],[string]
@@ -161,7 +172,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
 #>
 ```
 
-#### Set-ADObjectOwner
+### Set-ADObjectOwner
 
 ```PowerShell
 <#
@@ -191,6 +202,7 @@ By setting the Owner in an variable you will obtain a far better performance, si
 .NOTES
     FUNCTION: Set-ADObjectOwner
     AUTHOR:   Tom Stryhn
+    GITHUB:   https://github.com/tomstryhn/
 
 .INPUTS
     [string],[System.Security.Principal.NTAccount]

@@ -1,5 +1,25 @@
 #Requires -Modules ActiveDirectory
 
+<#PSScriptInfo
+
+.DESCRIPTION Sets the Access Control List Owner on an AD Object
+
+.VERSION 1.0.1.0
+
+.GUID 1f734259-d1b1-4ec1-9c25-56e06f381fc1
+
+.AUTHOR Tom Stryhn
+
+.COMPANYNAME Tom Stryhn
+
+.COPYRIGHT 2021 (c) Tom Stryhn
+
+.LICENSEURI https://github.com/tomstryhn/ADObjectOwner/blob/main/LICENSE
+
+.PROJECTURI https://github.com/tomstryhn/ADObjectOwner
+
+#>
+
 function Set-ADObjectOwner {
 
     <#
@@ -29,6 +49,7 @@ function Set-ADObjectOwner {
     .NOTES
         FUNCTION: Set-ADObjectOwner
         AUTHOR:   Tom Stryhn
+        GITHUB:   https://github.com/tomstryhn/
     
     .INPUTS
         [string],[System.Security.Principal.NTAccount]

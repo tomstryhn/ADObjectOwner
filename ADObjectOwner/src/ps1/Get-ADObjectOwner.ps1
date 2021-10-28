@@ -1,5 +1,25 @@
 #Requires -Modules ActiveDirectory
 
+<#PSScriptInfo
+
+.DESCRIPTION Gets the ACL of an ADObject, and returns the Object Owner
+
+.VERSION 1.0.1.0
+
+.GUID 266e43f6-5117-47cb-b7d0-9321fc3739ce
+
+.AUTHOR Tom Stryhn
+
+.COMPANYNAME Tom Stryhn
+
+.COPYRIGHT 2021 (c) Tom Stryhn
+
+.LICENSEURI https://github.com/tomstryhn/ADObjectOwner/blob/main/LICENSE
+
+.PROJECTURI https://github.com/tomstryhn/ADObjectOwner
+
+#>
+
 function Get-ADObjectOwner {
 
     <#
@@ -7,7 +27,7 @@ function Get-ADObjectOwner {
         Gets Object Owner, from the Access Control List on an ADObject.
     
     .DESCRIPTION
-        Gets the ACL of an ADObject, and returns the Object Owner.
+        Gets the ACL of an ADObject, and returns the Object Owner
     
     .PARAMETER DistinguishedName
         The DistinguishedName of the Object you want to get the Owner of.
@@ -22,6 +42,7 @@ function Get-ADObjectOwner {
     .NOTES
         FUNCTION: Set-ADObjectOwner
         AUTHOR:   Tom Stryhn
+        GITHUB:   https://github.com/tomstryhn/
     
     .INPUTS
         [string]

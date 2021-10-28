@@ -1,5 +1,25 @@
 #Requires -Modules ActiveDirectory
 
+<#PSScriptInfo
+
+.DESCRIPTION Validates a Security Principal NT Account and outputs it
+
+.VERSION 1.0.1.0
+
+.GUID c3df2dd9-99ad-467e-bd0b-a8923d5687c5
+
+.AUTHOR Tom Stryhn
+
+.COMPANYNAME Tom Stryhn
+
+.COPYRIGHT 2021 (c) Tom Stryhn
+
+.LICENSEURI https://github.com/tomstryhn/ADObjectOwner/blob/main/LICENSE
+
+.PROJECTURI https://github.com/tomstryhn/ADObjectOwner
+
+#>
+
 function Get-SecurityPrincipalNTAccount {
 
     <#
@@ -27,6 +47,7 @@ function Get-SecurityPrincipalNTAccount {
     .NOTES
         FUNCTION: Get-SecurityPrincipalNTAccount
         AUTHOR:   Tom Stryhn
+        GITHUB:   https://github.com/tomstryhn/
     
     .INPUTS
         [string],[string]
