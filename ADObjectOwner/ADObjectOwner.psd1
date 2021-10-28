@@ -52,10 +52,12 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            # Tags = @()
+            Tags = @('PSEdition_Desktop',
+                     'Active-Directory',
+                     'ACL')
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/tomstryhn/ADObjectOwner/blob/main/LICENSE'
+            LicenseUri = 'https://opensource.org/licenses/MIT'
 
             # A URL to the main website for this project.
             ProjectUri = 'https://github.com/tomstryhn/ADObjectOwner'
@@ -67,6 +69,5 @@
             # ReleaseNotes = ''
 
         } # End of PSData hashtable
-
     } # End of PrivateData hashtable
 }
