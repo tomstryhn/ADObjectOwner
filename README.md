@@ -17,6 +17,8 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 
 ## Version Changes
 
+>1.0.1.1
+- Fixed: Not stopping on Errors
 >1.0.1.0
 - First Version published to PowerShellGallery
 - Minor changes to the filestructure of the Module

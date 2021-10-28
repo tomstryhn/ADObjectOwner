@@ -4,7 +4,7 @@
 
 .DESCRIPTION Sets the Access Control List Owner on an AD Object
 
-.VERSION 1.0.1.0
+.VERSION 1.0.1.1
 
 .GUID 1f734259-d1b1-4ec1-9c25-56e06f381fc1
 
@@ -85,25 +85,21 @@ function Set-ADObjectOwner {
         try {
 
             $objectPath = "ActiveDirectory:://RootDSE/" + $DistinguishedName
-            $objectACL  = Get-Acl -Path $objectPath
-
+            $objectACL  = Get-Acl -Path $objectPath -ErrorAction Stop
         }
         catch {
 
             Write-Error -Message "Error getting ACL: [$DistinguishedName]" -ErrorAction Stop
-
         }
         try {
 
             $objectACL.SetOwner($Owner)
-            Set-Acl -Path $objectPath -AclObject $objectACL
-            Get-ADObjectOwner -DistinguishedName $DistinguishedName
-
+            Set-Acl -Path $objectPath -AclObject $objectACL -ErrorAction Stop
+            Get-ADObjectOwner -DistinguishedName $DistinguishedName -ErrorAction Stop
         }
         catch {
 
             Write-Error -Message "Error setting ACL: [$DistinguishedName]" -ErrorAction Stop
-
         }
     }
 }

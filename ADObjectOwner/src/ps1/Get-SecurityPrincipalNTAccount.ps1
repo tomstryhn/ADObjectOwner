@@ -4,7 +4,7 @@
 
 .DESCRIPTION Validates a Security Principal NT Account and outputs it
 
-.VERSION 1.0.1.0
+.VERSION 1.0.1.1
 
 .GUID c3df2dd9-99ad-467e-bd0b-a8923d5687c5
 
@@ -86,13 +86,13 @@ function Get-SecurityPrincipalNTAccount {
     }
     catch {
 
-        Write-Error -Message "Unable to validate credentials in domain" -ErrorAction Stop
+        Write-Error -Message "Unable to validate credentials in domain"
 
     }
 
     if (($ntAccount.Value -split '\\')[1] -eq $sAMAccountNameFromSID) {
         $ntAccount
     } else {
-        Write-Error -Message "Not valid credential" -ErrorAction Stop
+        Write-Error -Message "Not valid credential"
     }
 }

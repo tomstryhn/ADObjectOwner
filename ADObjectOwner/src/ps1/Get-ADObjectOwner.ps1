@@ -4,7 +4,7 @@
 
 .DESCRIPTION Gets the ACL of an ADObject, and returns the Object Owner
 
-.VERSION 1.0.1.0
+.VERSION 1.0.1.1
 
 .GUID 266e43f6-5117-47cb-b7d0-9321fc3739ce
 
@@ -70,18 +70,16 @@ function Get-ADObjectOwner {
 
         try {
 
-            $objectACL = Get-Acl -Path ("ActiveDirectory:://RootDSE/" + $DistinguishedName)
+            $objectACL = Get-Acl -Path ("ActiveDirectory:://RootDSE/" + $DistinguishedName) -ErrorAction Stop
             $output = [PSCustomObject]@{
                 DistinguishedName = $DistinguishedName
                 Owner             = $objectACL.Owner
             }
             $output
-
         }
         catch {
 
             Write-Error -Message "Error getting ACL: [$DistinguishedName]"
-
         }
     }
 }
