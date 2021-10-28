@@ -18,6 +18,7 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 ## Version Changes
 
 >1.0.1.0
+- First Version published to <a href="https://www.powershellgallery.com" target="_blank">PowerShellGallery</a>
 - Minor changes to the filestructure of the Module
 - ScriptFileInfo added on the scriptfiles in the Module
 - MIT License added - Yes, it's free to use
@@ -39,36 +40,9 @@ The easy way to mitigate this problem, is obviously to make sure that no unprivl
 
 ## Importing the Module
 
-1. Either you can download the ZIP using the green "Code" button top right, or clone this repository
-2. Go to your repositiry, or unzipped folder in your PowerShell
-3. See below
-
-```PowerShell
-
-PS C:\GitHub\ADObjectOwner> gci
-
-
-    Directory: C:\GitHub\ADObjectOwner
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----       26-10-2021     23:37                ADObjectOwner
--a----       26-10-2021     23:49            122 README.md
-
-
-PS C:\GitHub\ADObjectOwner> Import-Module .\ADObjectOwner
-PS C:\GitHub\ADObjectOwner> Get-Command -Module ADObjectOwner
-
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Function        Get-ADObjectOwner                                  1.0.1.0    ADObjectOwner
-Function        Get-SecurityPrincipalNTAccount                     1.0.1.0    ADObjectOwner
-Function        Set-ADObjectOwner                                  1.0.1.0    ADObjectOwner
-
-
-PS C:\GitHub\ADObjectOwner>
-
+This Module have been Published to the PowerShell Gallery, so installing is as simple AS:
+```
+Install-Module -Name ADObjectOwner
 ```
 
 ## Examples
