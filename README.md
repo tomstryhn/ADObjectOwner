@@ -66,8 +66,6 @@ PS C:\> _
 
 ```
 
-By setting the Owner in an variable you will obtain a far better performance, since the UserPrincipal will not have to be generated for each `Set-ADObjectOwner` action.
-
 ## Functions
 
 The list of the functions contained in this module.
