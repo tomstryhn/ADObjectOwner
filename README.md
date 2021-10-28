@@ -18,7 +18,7 @@ PowerShell Module, for making the process of changing the Owner of bulk ADObject
 ## Version Changes
 
 >1.0.1.0
-- First Version published to <a href="https://www.powershellgallery.com" target="_blank">PowerShellGallery</a>
+- First Version published to PowerShellGallery
 - Minor changes to the filestructure of the Module
 - ScriptFileInfo added on the scriptfiles in the Module
 - MIT License added - Yes, it's free to use
