@@ -18,6 +18,9 @@
     # Copyright statement for this module
     Copyright = 'Copyright (c) 2021 Tom Stryhn'
 
+    # Description of the functionality provided by this module.
+    Description = 'Powershell Module to help manage ADObject ownership in Active Directory'
+
     # Modules that must be imported into the global environment prior to importing this module
     RequiredModules = @('ActiveDirectory')
 
@@ -67,6 +70,8 @@
 
             # ReleaseNotes of this module
             # ReleaseNotes = ''
+
+            ExternalModuleDependencies = @("ActiveDirectory")
 
         } # End of PSData hashtable
     } # End of PrivateData hashtable
