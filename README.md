@@ -1,6 +1,6 @@
 # ADObjectOwner PowerShell Module
 
-PowerShell Module, for making the process of changing the Owner of bulk ADObjects so much more simple.
+PowerShell Module, for making the process of changing the Owner of ADObjects simple.
 
 ## Table of Content
 
